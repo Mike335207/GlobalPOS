@@ -9,7 +9,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\KartSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Kart Bilgileri';
+$this->title = 'Toplu Yükleme İşlemi';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -20,10 +20,6 @@ $this->params['breadcrumbs'][] = $this->title;
 		<div class="col-xs-12">
 			<div class="box box-primary">
 				<div class="box-header with-border">
-					
-    				<?php
-					if (Yii::$app->user->can('create-card'))					
-						echo Html::a('+ Yeni Kart Ekle', ['create'], ['class' => 'btn-sm btn-success']) ?>
 				</div>
 				
 				<?php if (Yii::$app->session->hasFlash('error')): ?>
@@ -36,27 +32,29 @@ $this->params['breadcrumbs'][] = $this->title;
 				
 				<div class="kart-index">
                 	<div class="box-body">
-					<?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-                    <?= GridView::widget
+		<?=Html::beginForm(['groupaccrual'],'post');?>
+		<?=Html::textinput('amount', '200.00')?>
+		<?=Html::submitButton('Yukle', ['class' => 'btn btn-info',]);?>
+                <?= GridView::widget
 					([
                         'dataProvider' => $dataProvider,
+			//'rowOptions' => function ($model, $key, $index, $grid) {
+			//		return [/*'data-id' => $model->ID*/];
+			//		},
                         'columns' => 
-						[
-                            ['class' => 'yii\grid\SerialColumn'],
-							'TIP',
-							//'bOLGE.BOLGE_ADI',
-                            'KART_NO',
-							'vatandas.vatandasName',
-							'balance',
-                            				[
-								'class' => 'yii\grid\ActionColumn',
-								'contentOptions' => ['style' => 'width: 9.0%'],
-								'visibleButtons' => [
-									'view' => true,
-									'update' => \Yii::$app->user->can('update-card'),
-									'delete' => \Yii::$app->user->can('delete-card'),
-								],
-							],
+			[
+                        // ['class' => 'yii\grid\CheckboxColumn'],
+			['class' => 'yii\grid\SerialColumn'],
+			   ['class' => 'yii\grid\CheckboxColumn', 'checkboxOptions' => function ($model, $key, $index, $column) {
+    return ['value' => $model->KART_ID];
+}
+      			],
+			
+					//'ID',                            		
+					//'KART_ID',
+					//'VATANDAS_ID',
+					'kART.KART_NO',
+					'vATANDAS.vatandasName'
                        	],
                     ]); 
 					?> 

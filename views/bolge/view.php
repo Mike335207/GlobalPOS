@@ -12,10 +12,10 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <section class="content">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-6">
 			<div class="box box-primary">
 				<div class="box-header with-border">
-					<h3 class="box-title">Coğrafi Bölge Bilgileri</h3>
+					<h3 class="box-title">Cografi Bolge Bilgileri</h3>
 				</div>
                 <div class="bolge-view">
                 	<div class="box-body">
@@ -26,9 +26,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'BOLGE_ADI',
                             ],
                         ]) ?>
-                        <p class="help-block">Yapmak istediğiniz işlemi seçiniz:</p>
+                        <p class="help-block">Yapmak istediginiz islemi seciniz:</p>
                         <p>
-                            <?= Html::a('Güncelle', ['update', 'id' => $model->BOLGE_ID], ['class' => 'btn btn-primary']) ?>
+                            <?= Html::a('Guncelle', ['update', 'id' => $model->BOLGE_ID], ['class' => 'btn btn-primary']) ?>
                             <?= Html::a('Sil', ['delete', 'id' => $model->BOLGE_ID], [
                                 'class' => 'btn btn-danger',
                                 'data' => [
@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     'method' => 'post',
                                 ],
                             ]) ?>
-                            <?= Html::a('+ Yeni Bölge Ekle', ['create'], ['class' => 'btn btn-success pull-right']) ?>
+                            <?= Html::a('+ Yeni Bolge Ekle', ['create'], ['class' => 'btn btn-success pull-right']) ?>
                         </p>
       				</div>
                 </div>

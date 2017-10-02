@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         ]) ?>
                         <p class="help-block">Yapmak istediginiz islemi seciniz:</p>
                         <p>
-                            <?= Html::a('Güncelle', ['update', 'id' => $model->BOLGE_ID], ['class' => 'btn btn-primary']) ?>
+                            <?= Html::a('Guncelle', ['update', 'id' => $model->BOLGE_ID], ['class' => 'btn btn-primary']) ?>
                             <?= Html::a('Sil', ['delete', 'id' => $model->BOLGE_ID], [
                                 'class' => 'btn btn-danger',
                                 'data' => [
@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     'method' => 'post',
                                 ],
                             ]) ?>
-                            <?= Html::a('+ Yeni Bölge Ekle', ['create'], ['class' => 'btn btn-success pull-right']) ?>
+                            <?= Html::a('+ Yeni Bolge Ekle', ['create'], ['class' => 'btn btn-success pull-right']) ?>
                         </p>
       				</div>
                 </div>

@@ -8,7 +8,7 @@ use yii\helpers\Html;
 
 \Yii::$app->language = 'tr-TR';
 
-$this->title = 'Yeni Bölge Tanımlama';
+$this->title = 'Yeni Bolge Tanimlama';
 $this->params['breadcrumbs'][] = ['label' => 'Bolgeler', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -17,12 +17,12 @@ $this->params['breadcrumbs'][] = $this->title;
 		<div class="col-xs-6">
 			<div class="box box-primary">
 				<div class="box-header with-border">
-					<h3 class="box-title">Coğrafi Bölge Bilgileri</h3>
+					<h3 class="box-title">Cografi Bolge Bilgileri</h3>
 				</div>
                 <div class="bolge-create">
                 <div class="box-body">
    					<?= $this->render('_form', ['model' => $model,]) ?>
-                  	<p class="help-block">Tamamlamak için kaydete basınız</p>
+                  	<p class="help-block">Tamamlamak icin kaydete basiniz</p>
                     </div>
                 </div>
 			</div>
